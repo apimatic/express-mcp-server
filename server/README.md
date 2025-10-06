@@ -60,7 +60,7 @@ You need to fill in the parts that look `[LIKE-THIS]`.
     "express-payments-apilib-mcp-server": {
       "command": "node",
       "args": [
-         "[YOUR-PATH-HERE]/server/server/cli.js"
+         "[YOUR-PATH-HERE]/server/server/cli.js",
         "--transport",
         "stdio"
       ],
@@ -85,7 +85,7 @@ You can also configure the MCP server in VS Code. The setup is similar to Claude
       "type": "stdio",
       "command": "node",
       "args": [
-         "[YOUR-PATH-HERE]/server/server/cli.js"
+         "[YOUR-PATH-HERE]/server/server/cli.js",
         "--transport",
         "stdio"
       ],
