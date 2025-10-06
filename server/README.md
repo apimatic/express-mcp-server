@@ -120,45 +120,4 @@ CVC: 111
 
 Express Cert AccountID: [YOUR-ACCOUNT-ID-HERE]
 Express Cert AcceptorID: [YOUR-ACCEPTOR-ID-HERE]
-
-Here's an example request:
-```
-Headers:
-  Accept: application/json
-  Content-Type: application/json
-  WP-Idempotency-Key: <unique-guid>
-  WP-Api-Version: 1
-  WP-AccountId: <account-id>
-  Authorization: Worldpay license=xxxx
-
-Body:
-{
-  "reference": "Memory265-13/08/1876",
-  "merchant": {
-    "id": "<acceptor-id>",
-    "terminalId": "<acceptor-id>"
-  },
-  "channel": {
-    "type": "ecom",
-    "paymentMethod": {
-      "type": "card",
-      "instrument": {
-        "type": "keyed/clear",
-        "cardData": {
-          "cardNumber": "<card-number>",
-          "expiryDate": {
-            "month": <month>,
-            "year": <year>
-          },
-          "cvc": "<cvc>"
-        }
-      }
-    }
-  },
-  "amount": {
-    "currency": "USD",
-    "value": 10
-  }
-}
-```
 ````
