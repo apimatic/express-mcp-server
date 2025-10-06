@@ -1,0 +1,131 @@
+
+# Pos Card Payment Method Create Payment
+
+Payment method for POS
+
+## Structure
+
+`PosCardPaymentMethodCreatePayment`
+
+## Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `type` | `string` | Required | Value indicating the specific type instance for this field.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `20` |
+| `instrument` | [`PosCardInstruments`](../../doc/models/containers/pos-card-instruments.md) | Required | Identifies **HOW** (ex Keyed, Swiped, Inserted or Tapped) the customer is providing the card information. |
+| `otherAmounts` | [`AdditionalAmountsCreditCardPresent \| undefined`](../../doc/models/additional-amounts-credit-card-present.md) | Optional | Other (optional) amounts that are included in the Total Authorization Amount, for credit card present |
+| `options` | [`CardPaymentMethodOptions \| undefined`](../../doc/models/card-payment-method-options.md) | Optional | Options for handling the authorization request |
+| `createToken` | [`TokenCreate \| undefined`](../../doc/models/containers/token-create.md) | Optional | Create a token for use in future payments |
+| `threeDs` | [`Threeds \| undefined`](../../doc/models/containers/threeds.md) | Optional | An object containing 3DS authentication preferences and customer data |
+| `customerAgreement` | [`CustomerAgreement \| undefined`](../../doc/models/containers/customer-agreement.md) | Optional | Setup an initial agreement (__first__) to store a customers payment details and make __subsequent__  payments when __storing a card__, for __subscriptions__, __installments__, __scheduled__, and __unscheduled__ payments |
+
+## Example (as JSON)
+
+```json
+{
+  "type": "type0",
+  "instrument": {
+    "type": "keyed/clear",
+    "cardData": {
+      "cardNumber": "cardNumber2",
+      "expiryDate": {
+        "month": 12,
+        "year": 20
+      },
+      "cvc": "123",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "pinData": {
+      "pinBlock": "pinBlock6",
+      "keySerialNumber": "keySerialNumber0"
+    },
+    "fallbackReasonCode": "manualKeyedMagstripeFailure"
+  },
+  "otherAmounts": {
+    "cashBack": 92,
+    "surcharge": 84,
+    "convenienceFee": 158,
+    "tip": 136,
+    "salesTax": 54
+  },
+  "options": {
+    "addressVerification": false,
+    "partialApproval": false,
+    "processAs": "creditOrSignatureDebit",
+    "autoCapture": false,
+    "preAuthorization": false
+  },
+  "createToken": {
+    "type": "worldpay",
+    "namespace": "namespace2",
+    "description": "description0",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "threeDs": {
+    "type": "integrated",
+    "mode": "softDeclineOnly",
+    "scaExemption": {
+      "enabled": false,
+      "placement": "authorization",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "challenge": {
+      "windowSize": "250x400",
+      "preference": "noPreference",
+      "returnUrl": "returnUrl6",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "deviceData": {
+      "browserLanguage": "browserLanguage4",
+      "browserJavaEnabled": false,
+      "browserColorDepth": 84,
+      "browserScreenHeight": 114,
+      "browserScreenWidth": 118,
+      "userAgentHeader": "userAgentHeader4",
+      "acceptHeader": "acceptHeader4",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "shipping": {
+      "email": "email2",
+      "nameMatchesAccountName": false,
+      "method": "otherAddress",
+      "timeFrame": "nextDay",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "previousSuspiciousActivity": false,
+    "usertype": "thirdPartyAuthentication",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "customerAgreement": {
+    "type": "cardOnFile",
+    "usage": "first",
+    "schemeReference": "schemeReference6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  }
+}
+```
+
