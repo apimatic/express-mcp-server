@@ -65,7 +65,7 @@ You need to fill in the parts that look `[LIKE-THIS]`.
         "stdio"
       ],
       "env": {
-        "EXPRESS_PAYMENTS_API_LIB_AUTHORIZATION": "Worldpay license=xxxx",
+        "EXPRESS_PAYMENTS_API_LIB_AUTHORIZATION": "Worldpay license=[YOUR-API-KEY-HERE]",
         "EXPRESS_PAYMENTS_API_LIB_ENVIRONMENT": "certification"
       }
     }
@@ -90,7 +90,7 @@ You can also configure the MCP server in VS Code. The setup is similar to Claude
         "stdio"
       ],
       "env": {
-        "EXPRESS_PAYMENTS_API_LIB_AUTHORIZATION": "Worldpay license=xxxx",
+        "EXPRESS_PAYMENTS_API_LIB_AUTHORIZATION": "Worldpay license=[YOUR-API-KEY-HERE]",
         "EXPRESS_PAYMENTS_API_LIB_ENVIRONMENT": "certification"
       }
     }
